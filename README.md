@@ -29,11 +29,11 @@ To start, I modified the Event model to include a boolean isFavorite property an
 One of the biggest challenges I ran into was that my original event data was hardcoded in the app and wasn’t actually being written to the database. That meant even though the favorites logic was in place, nothing would show up on the favorites screen because the database was essentially empty. To fix this, I refactored the code to load events directly from the database and insert new ones as the user added them.
 
 
-## **Category Two Enhancement: **
+## **Category Two Enhancement:**
 The artifact I enhanced is a dashboard I originally built for CS-340, Advanced Programming Concepts. It’s a web app created using Python with Dash and JupyterDash, and it connects to a MongoDB database to pull and display animal shelter data. The original version let users filter rescue animals by category, view them in a table, it was supposed to also show the location of each rescue animal, but the code was broken that ended up being caused by missing or invalid coordinate data. I added safeguards and checks in the update_map function to handle edge cases where data might be missing or misaligned, and that stopped the callback crashes.
 One of the new features I added displays live benchmark results comparing Python’s built-in sort function to my custom quicksort. I used the timeit module to calculate the time it takes to sort the same dataset with both methods and show the difference directly on the dashboard. Another big addition was the priority display using heapq. I created a callback that builds a heap from the dataset and displays the youngest animals below the main data table. I also enhanced it by adding a custom quicksort function to sort data manually and a priority queue system that uses a min-heap to surface the top 5 highest-priority animals from age, youngest.
 The process of enhancing the artifact taught me a lot. I had to troubleshoot a few things, and I couldn’t see my benchmark or priority queue results in the dashboard. That was because I accidentally left the new layout elements outside of the app’s layout container. Once I fixed that, the new sections showed up like they were supposed to. What I learned most from this enhancement was how important defensive coding is when working with live data, and how to bridge custom logic into a reactive web framework like Dash. It’s one thing to write a quicksort in a script but integrating it into a running dashboard and making it visually meaningful is a different story.
 
 
-## **Category Three Enhancement: **
+## **Category Three Enhancement:**
 Enhancing..
