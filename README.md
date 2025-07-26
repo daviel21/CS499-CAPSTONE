@@ -10,8 +10,14 @@ These skills go hand in hand with what I want to do in my career. I’m aiming f
 
 This ePortfolio showcases some of the projects and assignments I’ve completed throughout the program.
 
-## **Code review for my Artifacts**
-Text
+## [**Code review for my Artifacts**](https://go.screenpal.com/watch/cTi2qNnlHUP)
+For each category, I broke down which project I was going to use, what files I would go over, and what enhancements I planned to make. I started with bullet points and turned them into full scripts that I can follow during the recording. That way, if I forget something, I can quickly glance at my notes and keep going.
+
+-For Category One, I talked about my mobile app from CS 360 and explained each file and how they all work together. 
+-For Category Two, I focused on the algorithms side and explained how I’ll be adding a custom quicksort and priority queue to my CS 340 dashboard. 
+-For Category Three, I planned out how I’m going to improve my database structure, add advanced queries, and refactor the data layer using a repository class.
+
+
 
 ## **Category One Enhancement: Software Design and Engineering**
 Text
