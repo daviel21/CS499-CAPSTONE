@@ -28,12 +28,51 @@ The enhancement I planned was to implement a Favorites feature. Originally, the 
 To start, I modified the Event model to include a boolean isFavorite property and updated the event layout to display a star icon. I made sure users could toggle this icon to mark or unmark an event as a favorite. Then, I worked on storing that favorite state in the SQLite database. This required updating the schema to include a new is_favorite column and creating helper methods like setFavorite() and getFavoriteEventsList() in my AccountDatabaseHelper class.
 One of the biggest challenges I ran into was that my original event data was hardcoded in the app and wasn’t actually being written to the database. That meant even though the favorites logic was in place, nothing would show up on the favorites screen because the database was essentially empty. To fix this, I refactored the code to load events directly from the database and insert new ones as the user added them.
 
+&#8594; History of changes made:
+
+*Added the ability for users to mark events as “favorites” using a heart icon in the event_item.xml layout
+*Created a new screen (FavoriteEventsActivity) to display user-specific favorite events
+*Added a favorite column to the SQLite events table and updated the database schema
+*Implemented toggling logic for favorites using an ImageButton and SQL update queries
+*Updated the database schema to support storing a username per event
+*All queries (retrieval, insert, delete) now respect the current logged-in user context
+*Users can now see only their own events and their own favorites
+*Added a DatabaseRepository class to centralize all database logic
+*Shifted from tightly coupled SQL calls in activities to method-based access via the repository pattern
+*Made the app more maintainable and scalable through separation of concerns
+
 
 ## **Category Two Enhancement:**
 The artifact I enhanced is a dashboard I originally built for CS-340, Advanced Programming Concepts. It’s a web app created using Python with Dash and JupyterDash, and it connects to a MongoDB database to pull and display animal shelter data. The original version let users filter rescue animals by category, view them in a table, it was supposed to also show the location of each rescue animal, but the code was broken that ended up being caused by missing or invalid coordinate data. I added safeguards and checks in the update_map function to handle edge cases where data might be missing or misaligned, and that stopped the callback crashes.
 One of the new features I added displays live benchmark results comparing Python’s built-in sort function to my custom quicksort. I used the timeit module to calculate the time it takes to sort the same dataset with both methods and show the difference directly on the dashboard. Another big addition was the priority display using heapq. I created a callback that builds a heap from the dataset and displays the youngest animals below the main data table. I also enhanced it by adding a custom quicksort function to sort data manually and a priority queue system that uses a min-heap to surface the top 5 highest-priority animals from age, youngest.
 The process of enhancing the artifact taught me a lot. I had to troubleshoot a few things, and I couldn’t see my benchmark or priority queue results in the dashboard. That was because I accidentally left the new layout elements outside of the app’s layout container. Once I fixed that, the new sections showed up like they were supposed to. What I learned most from this enhancement was how important defensive coding is when working with live data, and how to bridge custom logic into a reactive web framework like Dash. It’s one thing to write a quicksort in a script but integrating it into a running dashboard and making it visually meaningful is a different story.
 
+&#8594; History of changes made:
+
+*Replaced default sorting logic with a manually coded quicksort algorithm in Python
+*Used quicksort to sort animal records by attributes such as intake date or urgency
+*Built a priority queue using Python’s heapq module
+*Prioritized animals based on factors such as age, health, and time in shelter
+*Enabled shelter staff to retrieve and process high-priority animals first
+*Used the timeit module to compare the performance of the custom quicksort against Python’s built-in sorted() function
+*Collected benchmark data and displayed results in the dashboard for transparency.
 
 ## **Category Three Enhancement:**
 For my Category Three enhancement, I focused on improving the database structure and overall functionality of my Android mobile application originally developed in CS-360. The goal was to move beyond simple data storage and retrieval and build a more robust, normalized database schema. I redesigned the SQLite database to support three related tables: Users, Events, and Categories. This allowed me to implement advanced SQL queries using joins, aggregate functions, and filters to extract meaningful insights from user data. For example, the app can now display statistics such as the most used event category or total number of events created in a given month. These insights are shown in a dedicated "Insights" screen within the app.I created a new DatabaseRepository class that centralizes all SQL operations, improving maintainability and separation of concerns in the code. One challenge I faced during this enhancement was ensuring the proper linkage between categories and events using foreign keys and correctly updating the UI to reflect those relationships. I also implemented query functions to retrieve events by category, keyword, or date. Throughout this process, my top priority has been ensuring the code is functional, and with time, I’ll continue to refine the user interface to improve the experience. This enhancement allowed me to demonstrate a solid understanding of relational databases, normalized schemas, SQL query design, and how to integrate that into a mobile application workflow. It reflects my growth in working with complex data structures and backend logic in mobile development, and it aligns directly with my concentration in software engineering.
+
+&#8594; History of changes made:
+
+*Redesigned the database schema with three normalized tables
+Users: stores user credentials.
+Categories: holds all possible event categories.
+Events: linked to users and categories via foreign keys.
+
+*Enforced data integrity through foreign key constraints
+*Most used event category per user using GROUP BY and COUNT
+*Total number of events this month using strftime('%m')
+*Created a dedicated InsightsActivity screen that visualizes these stats
+*Moved all database logic out of UI components and into DatabaseRepository.java
+*Abstracted queries like getMostUsedCategory(String username) and getMonthlyEventCount(String username) for reuse
+*Improved consistency and debugging across the app
+*Added spinner/dropdown in the event creation screen to select categories dynamically loaded from the Categories table
+*Insights screen pulls real-time data using SQL queries from the repository.
