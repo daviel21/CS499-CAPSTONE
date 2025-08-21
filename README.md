@@ -76,3 +76,11 @@ Events: linked to users and categories via foreign keys.
 *Improved consistency and debugging across the app
 *Added spinner/dropdown in the event creation screen to select categories dynamically loaded from the Categories table
 *Insights screen pulls real-time data using SQL queries from the repository.
+
+&#8594; Professional Self-Assessment:
+
+Looking back at my journey through the Computer Science program, I’ve learned a lot, not just about programming or databases, but about myself too. When I started, I had a general interest in tech, but now I’m walking away with real skills, confidence, and a clearer idea of what I want to do professionally. This capstone helped me pull everything together. It gave me the chance to apply what I’ve learned over the years and put it all in one place where I could show what I’m actually capable of.
+One thing I’ve focused on from the beginning of this course is making sure my code works. Functionality has always been a priority for me. Sometimes that meant not having the fanciest-looking interface, but I knew the logic behind the app was solid, and that's what I wanted to make sure I demonstrated. I do plan to take more time down the line to improve the look and feel for users, but for now I wanted to make sure the core features were working as intended.
+Throughout the capstone, I enhanced one main project to show my growth across three different areas, software design and engineering, data structures and algorithms, and databases. Each enhancement brought its own challenges, but I learned a lot each time. Whether I was implementing a favorites feature, improving how I sort and manage data, or redesigning my database to follow a more normalized structure, I could see how far I’ve come since I started this degree. There were definitely moments where I hit roadblocks, especially trying to get things like sorting or advanced filtering fully working, but each time I figured it out or got closer, it built up my confidence.
+Overall, this ePortfolio is my way of showing everything I’ve built and learned. It highlights the skills I’ve developed in programming, database design, algorithmic thinking, and secure coding.
+
